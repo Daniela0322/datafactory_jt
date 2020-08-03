@@ -1,0 +1,20 @@
+{
+	"name": "yacopiado_prueba",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dlscursodatafactoryjt",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
