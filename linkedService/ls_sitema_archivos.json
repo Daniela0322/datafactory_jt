@@ -1,0 +1,17 @@
+{
+	"name": "ls_sitema_archivos",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "D:\\Usuarios\\jetorres\\Documents\\Pruebas_DF",
+			"userId": "uio\\jetorres",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyZTk3ZTExYS0yMjk0LTQ1N2QtYmZjNS0yNmY4MTc5YTAxZDEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "ir-curso-df-jt",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
