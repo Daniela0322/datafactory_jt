@@ -1,0 +1,7 @@
+{
+	"name": "ir-curso-df-jt",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "conexion on premise"
+	}
+}
