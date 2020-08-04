@@ -1,0 +1,39 @@
+{
+	"name": "pl_factorial",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "rangeList",
+					"value": {
+						"value": "@range(1,pipeline().parameters.numeroAnalizar)",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"numeroAnalizar": {
+				"type": "int",
+				"defaultValue": 1
+			}
+		},
+		"variables": {
+			"factorial": {
+				"type": "String",
+				"defaultValue": "1"
+			},
+			"auxiliar": {
+				"type": "String"
+			},
+			"rangeList": {
+				"type": "Array"
+			}
+		},
+		"annotations": []
+	}
+}
