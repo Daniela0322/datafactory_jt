@@ -14,6 +14,55 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "Mensaje_validacion",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Set_es_Par",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@variables('esPar')",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "Set mensaje es impar",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "mensaje",
+								"value": {
+									"value": "El número @{pipeline().parameters.numeroAnalizar} es impar",
+									"type": "Expression"
+								}
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "Set_mensaje_par",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "mensaje",
+								"value": {
+									"value": "El número @{pipeline().parameters.numeroAnalizar} es Par",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
 			}
 		],
 		"parameters": {
@@ -24,6 +73,9 @@
 		"variables": {
 			"esPar": {
 				"type": "Boolean"
+			},
+			"mensaje": {
+				"type": "String"
 			}
 		},
 		"annotations": []
