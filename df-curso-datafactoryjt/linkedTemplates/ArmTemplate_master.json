@@ -1,0 +1,77 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "df-curso-datafactoryjt"
+		},
+		"ls_dlscursodatafactoryjt_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_dlscursodatafactoryjt'"
+		},
+		"ls_sitema_archivos_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_sitema_archivos'"
+		},
+		"ls_databricksCursoDataFactory_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'ls_databricksCursoDataFactory'"
+		},
+		"ls_sitema_archivos_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "D:\\Usuarios\\jetorres\\Documents\\Pruebas_DF"
+		},
+		"ls_sitema_archivos_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "uio\\jetorres"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_dlscursodatafactoryjt_connectionString": {
+						"value": "[parameters('ls_dlscursodatafactoryjt_connectionString')]"
+					},
+					"ls_databricksCursoDataFactory_accessToken": {
+						"value": "[parameters('ls_databricksCursoDataFactory_accessToken')]"
+					},
+					"ls_sitema_archivos_password": {
+						"value": "[parameters('ls_sitema_archivos_password')]"
+					},
+					"ls_sitema_archivos_properties_typeProperties_host": {
+						"value": "[parameters('ls_sitema_archivos_properties_typeProperties_host')]"
+					},
+					"ls_sitema_archivos_properties_typeProperties_userId": {
+						"value": "[parameters('ls_sitema_archivos_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

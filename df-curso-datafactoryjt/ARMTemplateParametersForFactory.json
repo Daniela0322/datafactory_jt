@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "df-curso-datafactoryjt"
+		},
+		"ls_dlscursodatafactoryjt_connectionString": {
+			"value": ""
+		},
+		"ls_sitema_archivos_password": {
+			"value": ""
+		},
+		"ls_databricksCursoDataFactory_accessToken": {
+			"value": ""
+		},
+		"ls_sitema_archivos_properties_typeProperties_host": {
+			"value": "D:\\Usuarios\\jetorres\\Documents\\Pruebas_DF"
+		},
+		"ls_sitema_archivos_properties_typeProperties_userId": {
+			"value": "uio\\jetorres"
+		}
+	}
+}
