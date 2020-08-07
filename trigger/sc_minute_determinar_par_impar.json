@@ -1,0 +1,28 @@
+{
+	"name": "sc_minute_determinar_par_impar",
+	"properties": {
+		"description": "pruebas",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_determinar_par_impar",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"numeroAnalizar": 44
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2020-08-07T21:42:00.000Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
