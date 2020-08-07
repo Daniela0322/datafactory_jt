@@ -27,6 +27,10 @@
 			"type": "string",
 			"defaultValue": "uio\\jetorres"
 		},
+		"sc_minute_determinar_par_impar_properties_pl_determinar_par_impar_parameters_numeroAnalizar": {
+			"type": "int",
+			"defaultValue": 12
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -68,6 +72,9 @@
 					},
 					"ls_sitema_archivos_properties_typeProperties_userId": {
 						"value": "[parameters('ls_sitema_archivos_properties_typeProperties_userId')]"
+					},
+					"sc_minute_determinar_par_impar_properties_pl_determinar_par_impar_parameters_numeroAnalizar": {
+						"value": "[parameters('sc_minute_determinar_par_impar_properties_pl_determinar_par_impar_parameters_numeroAnalizar')]"
 					}
 				}
 			},

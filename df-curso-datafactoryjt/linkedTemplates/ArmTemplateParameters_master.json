@@ -20,6 +20,9 @@
 		"ls_sitema_archivos_properties_typeProperties_userId": {
 			"value": "uio\\jetorres"
 		},
+		"sc_minute_determinar_par_impar_properties_pl_determinar_par_impar_parameters_numeroAnalizar": {
+			"value": 12
+		},
 		"containerUri": {
 			"value": ""
 		},

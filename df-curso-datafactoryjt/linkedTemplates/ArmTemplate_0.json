@@ -26,6 +26,10 @@
 		"ls_sitema_archivos_properties_typeProperties_userId": {
 			"type": "string",
 			"defaultValue": "uio\\jetorres"
+		},
+		"sc_minute_determinar_par_impar_properties_pl_determinar_par_impar_parameters_numeroAnalizar": {
+			"type": "int",
+			"defaultValue": 12
 		}
 	},
 	"variables": {
@@ -390,6 +394,40 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ls_databricksCursoDataFactory')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/sc_minute_determinar_par_impar')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "pruebas",
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pl_determinar_par_impar",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"numeroAnalizar": "[parameters('sc_minute_determinar_par_impar_properties_pl_determinar_par_impar_parameters_numeroAnalizar')]"
+						}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 1,
+						"startTime": "2020-08-07T21:48:00.000Z",
+						"endTime": "2020-08-07T21:50:00.000Z",
+						"timeZone": "UTC"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pl_determinar_par_impar')]"
 			]
 		},
 		{
